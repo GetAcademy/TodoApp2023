@@ -15,7 +15,7 @@ function createTaskHtml(){
             <li>            
                 ${task.title} - 
                 ${task.description}
-                <button onclick="selectTaskForEdit(${task.id})">velg</button>
+                <button onclick="selectTask(${task.id})">velg</button>
             </li>
         `;
     }

@@ -12,7 +12,6 @@ function updateViewEditTask() {
     `;
 }
 
-
 function createEditFieldHtml(label, fieldName, type, defaultValue) {
     if (!type) type = 'text';
     if(!defaultValue) defaultValue = '';

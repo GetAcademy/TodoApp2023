@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="js/model.js"></script>
+    <script src="js/common.js"></script>
     <script src="js/commonController.js"></script>
     <script src="js/commonView.js"></script>
     <script src="js/addTaskController.js"></script>
@@ -16,6 +17,8 @@
     <script src="js/dayView.js"></script>
     <script src="js/weekController.js"></script>
     <script src="js/weekView.js"></script>
+    <script src="js/detailTaskController.js"></script>
+    <script src="js/detailTaskView.js"></script>
 </head>
 
 <body>
@@ -28,6 +31,7 @@
             else if (model.app.currentPage == 'week') updateViewWeek();
             else if (model.app.currentPage == 'addTask') updateViewAddTask();
             else if (model.app.currentPage == 'editTask') updateViewEditTask();
+            else if (model.app.currentPage == 'detailTask') updateViewDetailTask();
             else updateViewWeek();
         }
     </script>

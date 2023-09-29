@@ -1,3 +1,10 @@
+function selectTask(id){
+    model.inputs.detailTaskPage.id = id;
+    model.app.currentPage = 'detailTask';            
+    updateView();
+}
+
+
 function selectTaskForEdit(id){
     const task = model.input.editTask;
     task.id = id;
