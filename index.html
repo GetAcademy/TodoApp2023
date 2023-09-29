@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/model.js"></script>
+    <script src="js/commonController.js"></script>
+    <script src="js/commonView.js"></script>
+    <script src="js/addTaskController.js"></script>
+    <script src="js/addTaskView.js"></script>
+    <script src="js/editTaskController.js"></script>
+    <script src="js/editTaskView.js"></script>
+    <script src="js/dayController.js"></script>
+    <script src="js/dayView.js"></script>
+    <script src="js/weekController.js"></script>
+    <script src="js/weekView.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        // view
+        updateView();
+        function updateView() {
+            if (model.app.currentPage == 'day') updateViewDay();
+            else if (model.app.currentPage == 'week') updateViewWeek();
+            else if (model.app.currentPage == 'addTask') updateViewAddTask();
+            else if (model.app.currentPage == 'editTask') updateViewEditTask();
+            else updateViewWeek();
+        }
+    </script>
+</body>
+
+</html>
