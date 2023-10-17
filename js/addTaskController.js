@@ -1,6 +1,7 @@
 function addTask() {
     let maxId = Math.max(...model.tasks.map(t => t.id));
     const task = model.inputs.addTaskPage;
+    // const newTask = {id: maxId + 1, ...task};
     const newTask = {
         id: maxId + 1,
         title: task.title,
