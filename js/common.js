@@ -1,9 +1,9 @@
 function getTaskById(id) {
-    return getObjectById(id, model.tasks);
-    // for (let task of model.tasks) {
-    //     if (task.id == id) return task;
-    // }
-    // return null;
+    for (let task of model.tasks) {
+        if (task.id == id) return task;
+    }
+    return null;
+    // return getObjectById(id, model.tasks);
 }
 
 function getObjectById(id, array) {

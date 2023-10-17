@@ -1,7 +1,7 @@
 function updateViewWeek(){
     document.getElementById('app').innerHTML = /*HTML*/`
         ${createMenuHtml()}
-        <h1>Uke</h1>
+        <h1>Uke (alle oppgaver foreløpig)</h1>
         <ul>
             ${createTaskHtml()}
         </ul>
@@ -15,7 +15,7 @@ function createTaskHtml(){
             <li>            
                 ${task.title} - 
                 ${task.description}
-                <button onclick="selectTask(${task.id})">velg</button>
+                <button onclick="showDetailViewForTask(${task.id})">velg</button>
             </li>
         `;
     }

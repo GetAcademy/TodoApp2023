@@ -9,7 +9,7 @@ function updateViewDetailTask() {
         <b>Tittel</b><br/>${task.title}<br/>
         <b>Beskrivelse</b><br/>${task.description}<br/>
 
-        <button>Lagre</button>
+        <button onclick="showEditViewForTask(${id})">Rediger</button>
     `;
 }
 

@@ -1,16 +1,17 @@
 function updateViewEditTask() {
+    const id = model.inputs.editTaskPage.id;
+    const task = getTaskById(id);
     document.getElementById('app').innerHTML = /*HTML*/`
         ${createMenuHtml()}
-        <h1>Endre eller legge til ny oppgave</h1>
+        <h1>Rediger oppgave</h1>
 
-        ${createEditFieldHtml('Tittel', 'title')}
-        ${createEditFieldHtml('Beskrivelse', 'description')}
-        ${createEditFieldHtml('Varighet', 'duration', 'number')}
-        ${createEditFieldHtml('Gjentakelse', 'recurring')}
-        ${createEditFieldHtml('Frist', 'duedate', 'date')}
-        <button>Lagre</button>
+        ${createEditFieldHtml('Tittel', 'title', 'text', task.title)}
+        ${createEditFieldHtml('Beskrivelse', 'description', 'text', task.description)}
+        ${createEditFieldHtml('Frist', 'duedate', 'date', task.duedate)}
+        <button onclick="saveChangesInTask(${id})">Lagre endringer</button>
     `;
 }
+
 
 function createEditFieldHtml(label, fieldName, type, defaultValue) {
     if (!type) type = 'text';
@@ -20,8 +21,8 @@ function createEditFieldHtml(label, fieldName, type, defaultValue) {
         ${label}: <br/>
         <input 
             type="${type}"
-            oninput="model.inputs.addOrEditTaskPage.${fieldName}=this.${value}"
-            value="${model.inputs.addOrEditTaskPage[fieldName] || defaultValue}"
+            oninput="model.inputs.addTaskPage.${fieldName}=this.${value}"
+            value="${model.inputs.addTaskPage[fieldName] || defaultValue}"
             />
         <br/>
         `;
